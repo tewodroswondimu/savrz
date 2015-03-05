@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  SAVRZ
 //
 //  Created by Tewodros Wondimu on 3/5/15.
@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
-@interface ViewController : UIViewController
-
+@interface LoginViewController : UIViewController
 
 @end
-
