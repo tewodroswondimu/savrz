@@ -11,6 +11,7 @@
 @interface FBFriendsViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *friendsArray;
+@property NSMutableArray *selectedFriends;
 
 @end
 
@@ -20,11 +21,12 @@
 {
     [super viewDidLoad];
     self.friendsArray = [NSMutableArray new];
+    self.selectedFriends = [NSMutableArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // Send request to Facebook for all my friends
+    // Send request to Facebook for all my friends and loads into the friendsArray
     FBRequest *request = [FBRequest requestWithGraphPath:@"me/taggable_friends" parameters:nil HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
@@ -34,22 +36,14 @@
 
 
             for (NSDictionary<FBGraphUser>*friend in friendObjects) {
-//                NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
                 [self.friendsArray addObject:friend];
             }
             [self.tableView reloadData];
         }
     }];
-
-//    [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//        if (!error) {
-//            // result will contain an array with your user's friends in the "data" key
-//            NSArray *friendObjects = [result objectForKey:@"data"];
-//            NSLog(@"%@", friendObjects);
-//        }
-//    }];
 }
 
+#pragma mark -
 #pragma mark TABLE VIEW
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,5 +66,26 @@
     });
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath   *)indexPath
+{
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    [self.selectedFriends addObject:self.friendsArray[indexPath.row]];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    [self.selectedFriends removeObject:self.friendsArray[indexPath.row]];
+}
+
+#pragma mark - 
+#pragma mark UNWIND
+
+- (NSMutableArray *)returnSelectedFriends
+{
+    return self.selectedFriends;
+}
+
 
 @end

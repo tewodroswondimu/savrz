@@ -110,6 +110,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CtU-Is-mJm"/>
                     <connections>
+                        <outlet property="addYourFriendsButton" destination="tFj-l7-R3g" id="DfW-Yp-Wwo"/>
                         <outlet property="amountOfMoneyTextField" destination="sV5-aS-3ZZ" id="fXZ-TA-nMe"/>
                         <outlet property="periodTextField" destination="z4W-jl-ThO" id="teg-LD-kEb"/>
                         <outlet property="poolNameTextField" destination="pcA-Fz-sK4" id="q6t-Ns-DcM"/>
@@ -123,7 +124,7 @@
         <scene sceneID="pZf-kW-2DG">
             <objects>
                 <tableViewController id="08t-y6-6Iw" customClass="FBFriendsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="QnP-Uf-0xY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="QnP-Uf-0xY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,12 +141,19 @@
                             <outlet property="delegate" destination="08t-y6-6Iw" id="qoq-3O-16y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pAW-mv-VAd"/>
+                    <navigationItem key="navigationItem" id="pAW-mv-VAd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Bc4-Wi-ihi">
+                            <connections>
+                                <segue destination="Bna-Wd-mK1" kind="unwind" unwindAction="unwindFromAddFriends:" id="9Qw-MQ-VvI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="QnP-Uf-0xY" id="dKO-tJ-Ded"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBO-wX-tII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bna-Wd-mK1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1413" y="266"/>
         </scene>
