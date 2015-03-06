@@ -15,7 +15,44 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l60-3Y-Q4i">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Qsz-jT-sxL">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auj-te-4Ny">
+                                            <rect key="frame" x="188" y="8" width="124" height="30"/>
+                                            <state key="normal" title="Create New Pools">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="JW5-ok-LXl" kind="push" id="fnQ-PN-oUt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PoolsCell" id="Egf-2o-3tC">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Egf-2o-3tC" id="wXQ-Ba-sQZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l60-3Y-Q4i" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ILr-EZ-cnD"/>
+                            <constraint firstAttribute="trailing" secondItem="l60-3Y-Q4i" secondAttribute="trailing" id="PBx-8a-TT1"/>
+                            <constraint firstItem="l60-3Y-Q4i" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="cdX-p6-1uy"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="l60-3Y-Q4i" secondAttribute="bottom" id="vvd-fA-EFG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qjX-DI-Aiq">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="LA2-mz-hwg">
@@ -31,6 +68,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="266"/>
+        </scene>
+        <!--Create Pool View Controller-->
+        <scene sceneID="Sve-Y4-ILy">
+            <objects>
+                <viewController id="JW5-ok-LXl" customClass="CreatePoolViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1c6-2V-koa"/>
+                        <viewControllerLayoutGuide type="bottom" id="onf-QQ-8no"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FXE-Ed-Nwv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Pool" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-Fz-sK4">
+                                <rect key="frame" x="16" y="116" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount of Money" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-aS-3ZZ">
+                                <rect key="frame" x="16" y="160" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Period" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-jl-ThO">
+                                <rect key="frame" x="16" y="207" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFj-l7-R3g">
+                                <rect key="frame" x="16" y="261" width="118" height="30"/>
+                                <state key="normal" title="Add Your Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="08t-y6-6Iw" kind="push" id="6YS-Ac-ekK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CtU-Is-mJm"/>
+                    <connections>
+                        <outlet property="amountOfMoneyTextField" destination="sV5-aS-3ZZ" id="fXZ-TA-nMe"/>
+                        <outlet property="periodTextField" destination="z4W-jl-ThO" id="teg-LD-kEb"/>
+                        <outlet property="poolNameTextField" destination="pcA-Fz-sK4" id="q6t-Ns-DcM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKu-N4-Wz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="266"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="pZf-kW-2DG">
+            <objects>
+                <tableViewController id="08t-y6-6Iw" customClass="FBFriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="QnP-Uf-0xY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCell" id="cvH-Jq-fa3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvH-Jq-fa3" id="hbT-s2-Azs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="08t-y6-6Iw" id="V9g-hE-9hD"/>
+                            <outlet property="delegate" destination="08t-y6-6Iw" id="qoq-3O-16y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pAW-mv-VAd"/>
+                    <connections>
+                        <outlet property="tableView" destination="QnP-Uf-0xY" id="dKO-tJ-Ded"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bBO-wX-tII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="266"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="4pH-HP-fyS">

@@ -35,6 +35,8 @@
 		18B7D2E61AA8DF8F00147BED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1846B89B1AA8C71F00A23C3D /* QuartzCore.framework */; };
 		18B7D2E71AA8F88C00147BED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B7D2E41AA8DF1600147BED /* Bolts.framework */; };
 		18B7D2ED1AA9039100147BED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2EC1AA9039100147BED /* LoginViewController.m */; };
+		18B7D2F01AA918A800147BED /* CreatePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */; };
+		18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		18B7D2E41AA8DF1600147BED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		18B7D2EB1AA9039100147BED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18B7D2EC1AA9039100147BED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		18B7D2EE1AA918A800147BED /* CreatePoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePoolViewController.h; sourceTree = "<group>"; };
+		18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePoolViewController.m; sourceTree = "<group>"; };
+		18B7D2F11AA91E9300147BED /* FBFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFriendsViewController.h; sourceTree = "<group>"; };
+		18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,10 @@
 				1846B8651AA8C49900A23C3D /* ViewController.m */,
 				18B7D2EB1AA9039100147BED /* LoginViewController.h */,
 				18B7D2EC1AA9039100147BED /* LoginViewController.m */,
+				18B7D2EE1AA918A800147BED /* CreatePoolViewController.h */,
+				18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */,
+				18B7D2F11AA91E9300147BED /* FBFriendsViewController.h */,
+				18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */,
 				1846B8671AA8C49900A23C3D /* Main.storyboard */,
 				1846B86A1AA8C49900A23C3D /* Images.xcassets */,
 				1846B86C1AA8C49900A23C3D /* LaunchScreen.xib */,
@@ -322,8 +332,10 @@
 			files = (
 				1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */,
 				1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */,
+				18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */,
 				1846B8661AA8C49900A23C3D /* ViewController.m in Sources */,
 				1846B85D1AA8C49900A23C3D /* main.m in Sources */,
+				18B7D2F01AA918A800147BED /* CreatePoolViewController.m in Sources */,
 				18B7D2ED1AA9039100147BED /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

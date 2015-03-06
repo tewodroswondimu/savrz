@@ -45,6 +45,8 @@
 
 - (IBAction)logout:(UIBarButtonItem *)sender {
     [PFUser logOut];
+    
+    [self checkLoggedIn];
 }
 
 - (void)loadData {
