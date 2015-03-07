@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LoginViewController.h"
+#import "PoolDetailViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -58,6 +59,14 @@
     cell.textLabel.text = pool[@"PoolName"];
     cell.detailTextLabel.text = pool[@"Period"];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PoolDetailSegue"]) {
+        PoolDetailViewController *pdvc = segue.destinationViewController;
+        pdvc.pool = self.poolsArray[self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 - (void)checkLoggedIn

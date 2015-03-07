@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181BF2161AABC1DD0069B98B /* PoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181BF2151AABC1DD0069B98B /* PoolDetailViewController.m */; };
 		1846B85D1AA8C49900A23C3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846B85C1AA8C49900A23C3D /* main.m */; };
 		1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846B85F1AA8C49900A23C3D /* AppDelegate.m */; };
 		1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1846B8611AA8C49900A23C3D /* SAVRZ.xcdatamodeld */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181BF2141AABC1DD0069B98B /* PoolDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolDetailViewController.h; sourceTree = "<group>"; };
+		181BF2151AABC1DD0069B98B /* PoolDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoolDetailViewController.m; sourceTree = "<group>"; };
 		1846B8571AA8C49900A23C3D /* SAVRZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAVRZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1846B85B1AA8C49900A23C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1846B85C1AA8C49900A23C3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				1846B85F1AA8C49900A23C3D /* AppDelegate.m */,
 				1846B8641AA8C49900A23C3D /* ViewController.h */,
 				1846B8651AA8C49900A23C3D /* ViewController.m */,
+				181BF2141AABC1DD0069B98B /* PoolDetailViewController.h */,
+				181BF2151AABC1DD0069B98B /* PoolDetailViewController.m */,
 				18B7D2EB1AA9039100147BED /* LoginViewController.h */,
 				18B7D2EC1AA9039100147BED /* LoginViewController.m */,
 				18B7D2EE1AA918A800147BED /* CreatePoolViewController.h */,
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181BF2161AABC1DD0069B98B /* PoolDetailViewController.m in Sources */,
 				18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */,
 				1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */,
 				1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */,
