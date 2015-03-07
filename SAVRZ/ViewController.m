@@ -77,15 +77,25 @@
 
 - (void)loadPools
 {
-    PFQuery *poolsQuery = [PFQuery queryWithClassName:@"Pools"];
-    PFUser *user = [PFUser currentUser];
-    if (user) {
-        [poolsQuery whereKey:@"CreatedBy" equalTo:user];
-    }
-    [poolsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        self.poolsArray = objects;
-        [self.tableView reloadData];
-    }];
+    // Find all the pools that the user created
+//    PFQuery *poolsQuery = [PFQuery queryWithClassName:@"Pools"];
+//    PFUser *user = [PFUser currentUser];
+//    if (user) {
+//        [poolsQuery whereKey:@"CreatedBy" equalTo:user];
+//    }
+//    [poolsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.poolsArray = objects;
+//        [self.tableView reloadData];
+//    }];
+
+    // Find all the pools that are owned by the users
+    PFQuery *query = [PFQuery queryWithClassName:@"Pools"];
+    [query whereKey:@"Owners" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         self.poolsArray = objects;
+         [self.tableView reloadData];
+     }];
 }
 
 - (void)loadData {

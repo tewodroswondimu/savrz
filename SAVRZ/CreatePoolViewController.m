@@ -96,10 +96,12 @@
     for (PFUser *owner in self.selectedUsersArray) {
         [relation addObject:owner];
     }
+    // Add the creator as an owner
+    [relation addObject:[PFUser currentUser]];
 
+    [self.navigationController popViewControllerAnimated:YES];
     [poolObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
 }
