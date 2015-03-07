@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "LoginViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property NSString *location;
 @property NSString *gender;
@@ -18,6 +19,8 @@
 @property NSString *relationshipStatus;
 @property UIImage *userProfileImage;
 
+@property NSArray *poolsArray;
+
 @end
 
 @implementation ViewController
@@ -25,13 +28,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
     [self loadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self checkLoggedIn];
+    [self.tableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self.tableView reloadData];
+}
+
+#pragma mark -
+#pragma mark TABLE VIEW
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.poolsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PoolsCell"];
+    PFObject *pool = self.poolsArray[indexPath.row];
+    cell.textLabel.text = pool[@"PoolName"];
+    cell.detailTextLabel.text = pool[@"Period"];
+    return cell;
 }
 
 - (void)checkLoggedIn
@@ -49,11 +75,26 @@
     [self checkLoggedIn];
 }
 
+- (void)loadPools
+{
+    PFQuery *poolsQuery = [PFQuery queryWithClassName:@"Pools"];
+    [poolsQuery whereKey:@"CreatedBy" equalTo:[PFUser currentUser]];
+    [poolsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.poolsArray = objects;
+        [self.tableView reloadData];
+    }];
+}
+
 - (void)loadData {
 
     // If the user is already logged in, display any previously cached values before we get the latest from Facebook.
     if ([PFUser currentUser]) {
         [self updateProfileData];
+    }
+
+    // Load all the pools that belong to this user
+    if (!self.poolsArray.count) {
+        [self loadPools];
     }
 
     if([PFFacebookUtils session]) {

@@ -26,15 +26,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // Send request to Facebook for all my friends and loads into the friendsArray
-    FBRequest *request = [FBRequest requestWithGraphPath:@"me/taggable_friends" parameters:nil HTTPMethod:@"GET"];
+    // Send request to Facebook for all my friends that use the app and loads into the friendsArray
+    NSDictionary *parameters = [ NSDictionary dictionaryWithObjectsAndKeys:@"id,first_name,last_name,name,picture,email,link",@"fields",nil];
+    FBRequest *request = [FBRequest requestWithGraphPath:@"me/friends" parameters:parameters HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             // result will contain an array with your user's friends in the "data" key
             NSArray *friendObjects = [result objectForKey:@"data"];
-            NSLog(@"%@", friendObjects[1]);
+            NSLog(@"%@", friendObjects[0]);
 
-
+            // Modify the contents of each friend
             for (NSDictionary<FBGraphUser>*friend in friendObjects) {
                 [self.friendsArray addObject:friend];
             }
@@ -51,6 +52,7 @@
     return self.friendsArray.count;
 }
 
+// Displays the names and profile images of the friends
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendsCell"];
@@ -82,9 +84,9 @@
 #pragma mark - 
 #pragma mark UNWIND
 
-- (NSMutableArray *)returnSelectedFriends
+- (NSArray *)returnSelectedFriends
 {
-    return self.selectedFriends;
+    return [NSArray arrayWithArray:self.selectedFriends];
 }
 
 

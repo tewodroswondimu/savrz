@@ -11,7 +11,7 @@
 @implementation LoginViewController
 
 - (IBAction)onLoginWithFacebookButtonPressed:(UIButton *)sender {
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"user_friends"];
+    NSArray *permissionsArray = @[@"user_about_me", @"user_friends"];
 
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -34,8 +34,17 @@
         } else {
             if (user.isNew) {
                 NSLog(@"User with facebook signed up and logged in!");
+                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    if (!error) {
+                        // Store the current user's Facebook ID on the user
+                        [[PFUser currentUser] setObject:[result objectForKey:@"id"]
+                                                 forKey:@"facebookID"];
+                        [[PFUser currentUser] saveInBackground];
+                    }
+                }];
             } else {
                 NSLog(@"User with facebook logged in!");
+
             }
         }
 

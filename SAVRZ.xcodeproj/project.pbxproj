@@ -37,6 +37,7 @@
 		18B7D2ED1AA9039100147BED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2EC1AA9039100147BED /* LoginViewController.m */; };
 		18B7D2F01AA918A800147BED /* CreatePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */; };
 		18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */; };
+		18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePoolViewController.m; sourceTree = "<group>"; };
 		18B7D2F11AA91E9300147BED /* FBFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFriendsViewController.h; sourceTree = "<group>"; };
 		18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFriendsViewController.m; sourceTree = "<group>"; };
+		18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCollectionViewCell.h; sourceTree = "<group>"; };
+		18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */,
 				18B7D2F11AA91E9300147BED /* FBFriendsViewController.h */,
 				18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */,
+				18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */,
+				18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */,
 				1846B8671AA8C49900A23C3D /* Main.storyboard */,
 				1846B86A1AA8C49900A23C3D /* Images.xcassets */,
 				1846B86C1AA8C49900A23C3D /* LaunchScreen.xib */,
@@ -330,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */,
 				1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */,
 				1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */,
 				18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */,

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface FBFriendsViewController : UITableViewController
 
-- (NSMutableArray *)returnSelectedFriends;
+/**
+ *  returns an array of the selected frineds
+ *
+ *  @return NSArray of selected friends
+ */
+- (NSArray *)returnSelectedFriends;
 
 @end
