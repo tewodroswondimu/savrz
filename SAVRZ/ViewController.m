@@ -40,7 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    [self.tableView reloadData];
+    [self loadPools];
 }
 
 #pragma mark -
@@ -78,7 +78,10 @@
 - (void)loadPools
 {
     PFQuery *poolsQuery = [PFQuery queryWithClassName:@"Pools"];
-    [poolsQuery whereKey:@"CreatedBy" equalTo:[PFUser currentUser]];
+    PFUser *user = [PFUser currentUser];
+    if (user) {
+        [poolsQuery whereKey:@"CreatedBy" equalTo:user];
+    }
     [poolsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.poolsArray = objects;
         [self.tableView reloadData];

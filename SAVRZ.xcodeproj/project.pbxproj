@@ -31,6 +31,8 @@
 		1846B8A41AA8C73700A23C3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1846B8A31AA8C73700A23C3D /* SystemConfiguration.framework */; };
 		1846B8A61AA8C73F00A23C3D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1846B8A51AA8C73F00A23C3D /* libz.dylib */; };
 		1846B8A81AA8C74900A23C3D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1846B8A71AA8C74900A23C3D /* libsqlite3.dylib */; };
+		187264D91AAB925A0072FA00 /* LevelMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 187264D81AAB925A0072FA00 /* LevelMoney.m */; };
+		187264DC1AAB976E0072FA00 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187264DB1AAB976E0072FA00 /* ProfileViewController.m */; };
 		18B7D2E11AA8DE1F00147BED /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B7D2E01AA8DE1F00147BED /* FacebookSDK.framework */; };
 		18B7D2E61AA8DF8F00147BED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1846B89B1AA8C71F00A23C3D /* QuartzCore.framework */; };
 		18B7D2E71AA8F88C00147BED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B7D2E41AA8DF1600147BED /* Bolts.framework */; };
@@ -82,6 +84,10 @@
 		1846B8A31AA8C73700A23C3D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1846B8A51AA8C73F00A23C3D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1846B8A71AA8C74900A23C3D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		187264D71AAB925A0072FA00 /* LevelMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMoney.h; sourceTree = "<group>"; };
+		187264D81AAB925A0072FA00 /* LevelMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMoney.m; sourceTree = "<group>"; };
+		187264DA1AAB976E0072FA00 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		187264DB1AAB976E0072FA00 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		18B7D2E01AA8DE1F00147BED /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		18B7D2E41AA8DF1600147BED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		18B7D2EB1AA9039100147BED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 		1846B8591AA8C49900A23C3D /* SAVRZ */ = {
 			isa = PBXGroup;
 			children = (
+				187264DD1AAB977B0072FA00 /* Objects */,
 				1846B8831AA8C6B600A23C3D /* Frameworks */,
 				1846B85E1AA8C49900A23C3D /* AppDelegate.h */,
 				1846B85F1AA8C49900A23C3D /* AppDelegate.m */,
@@ -165,6 +172,8 @@
 				18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */,
 				18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */,
 				18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */,
+				187264DA1AAB976E0072FA00 /* ProfileViewController.h */,
+				187264DB1AAB976E0072FA00 /* ProfileViewController.m */,
 				1846B8671AA8C49900A23C3D /* Main.storyboard */,
 				1846B86A1AA8C49900A23C3D /* Images.xcassets */,
 				1846B86C1AA8C49900A23C3D /* LaunchScreen.xib */,
@@ -232,6 +241,15 @@
 				1846B8891AA8C6CD00A23C3D /* ParseUI.framework */,
 			);
 			path = "parse-library-1.6.4";
+			sourceTree = "<group>";
+		};
+		187264DD1AAB977B0072FA00 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				187264D71AAB925A0072FA00 /* LevelMoney.h */,
+				187264D81AAB925A0072FA00 /* LevelMoney.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +356,8 @@
 				18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */,
 				1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */,
 				1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */,
+				187264D91AAB925A0072FA00 /* LevelMoney.m in Sources */,
+				187264DC1AAB976E0072FA00 /* ProfileViewController.m in Sources */,
 				18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */,
 				1846B8661AA8C49900A23C3D /* ViewController.m in Sources */,
 				1846B85D1AA8C49900A23C3D /* main.m in Sources */,
