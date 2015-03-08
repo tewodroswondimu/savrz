@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 @end
 
@@ -27,6 +29,10 @@
 //    self.tokenTextField.text = @"63C08C4AA6E3CB1A4B13C9C5299365C0";
 //    self.uidTextField.text = @"1110570164";
 //    self.tokenTextField.text = @"119947F2D985C3788998543A3D3AD90C";
+    self.logOutButton.layer.cornerRadius = 10;
+    self.logOutButton.clipsToBounds = YES;
+    self.exitButton.layer.cornerRadius = 10;
+    self.exitButton.clipsToBounds = YES;
 }
 
 - (IBAction)onExitButtonTapped:(UIButton *)sender {

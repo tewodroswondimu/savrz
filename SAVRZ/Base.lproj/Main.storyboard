@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E20-BN-Fyl">
-                                <rect key="frame" x="274" y="20" width="30" height="30"/>
-                                <state key="normal" title="Exit">
-                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onExitButtonTapped:" destination="dg8-al-pCL" eventType="touchUpInside" id="Vf7-al-e9X"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-hj-CE9">
                                 <rect key="frame" x="47" y="383" width="226" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -68,22 +58,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu0-pV-tMg">
-                                <rect key="frame" x="16" y="20" width="56" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="dg8-al-pCL" eventType="touchUpInside" id="Ikw-b3-J4P"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrw-Fw-38M">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu0-pV-tMg">
+                                        <rect key="frame" x="8" y="23" width="70" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logout:" destination="dg8-al-pCL" eventType="touchUpInside" id="Ikw-b3-J4P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E20-BN-Fyl">
+                                        <rect key="frame" x="262" y="23" width="50" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Exit">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onExitButtonTapped:" destination="dg8-al-pCL" eventType="touchUpInside" id="Vf7-al-e9X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="jwi-az-HLd" id="hOO-cv-JPf"/>
+                        <outlet property="exitButton" destination="E20-BN-Fyl" id="xJS-eG-374"/>
+                        <outlet property="logOutButton" destination="Eu0-pV-tMg" id="Fs3-tk-0xe"/>
                         <outlet property="phoneNumberTextField" destination="dam-4O-1JJ" id="CBj-QY-wQB"/>
                         <outlet property="tokenTextField" destination="UAf-pD-PoF" id="jsk-Km-rxB"/>
                         <outlet property="uidTextField" destination="tnc-hj-CE9" id="fdE-z0-0uJ"/>
@@ -276,9 +285,50 @@
                     <view key="view" contentMode="scaleToFill" id="H7K-85-7E7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ng-ON-WJO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2IT-VI-e3F">
+                                        <rect key="frame" x="110" y="65" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ClA-nl-YO7"/>
+                                            <constraint firstAttribute="height" constant="100" id="jjo-Pe-IWF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhP-uW-k0V">
+                                        <rect key="frame" x="0.0" y="180" width="320" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="0S4-G1-bNr"/>
+                                            <constraint firstAttribute="height" constant="21" id="RdT-50-R7A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="BhP-uW-k0V" secondAttribute="centerX" id="4uU-nD-Xxd"/>
+                                    <constraint firstAttribute="height" constant="230" id="N6m-Ui-ngI"/>
+                                    <constraint firstItem="BhP-uW-k0V" firstAttribute="top" secondItem="2IT-VI-e3F" secondAttribute="bottom" constant="15" id="P1Q-Lq-whr"/>
+                                    <constraint firstAttribute="centerX" secondItem="2IT-VI-e3F" secondAttribute="centerX" id="b2T-Zs-VZy"/>
+                                    <constraint firstAttribute="centerY" secondItem="2IT-VI-e3F" secondAttribute="centerY" id="gHU-vw-h6W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ng-ON-WJO" firstAttribute="leading" secondItem="H7K-85-7E7" secondAttribute="leading" id="3FY-Kx-TjM"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ng-ON-WJO" secondAttribute="trailing" id="eD4-Cn-uOB"/>
+                            <constraint firstItem="9Ng-ON-WJO" firstAttribute="top" secondItem="gzW-w2-Txk" secondAttribute="bottom" id="rwG-iF-mJ8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7ze-YP-YqM"/>
+                    <connections>
+                        <outlet property="winnerImageView" destination="2IT-VI-e3F" id="gzZ-Sb-QJo"/>
+                        <outlet property="winnerName" destination="BhP-uW-k0V" id="FgR-oS-UDA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5c-8u-CSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
