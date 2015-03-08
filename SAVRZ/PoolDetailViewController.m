@@ -7,6 +7,8 @@
 //
 
 #import "PoolDetailViewController.h"
+#import "WinnerTableViewCell.h"
+#import "Nexmo.h"
 
 @interface PoolDetailViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -39,6 +41,7 @@
     self.winnerTimer = nil;
 }
 
+// Shows the winners using a timer
 - (void)winnerTimer:(NSTimer *)timer
 {
     NSArray *poolWinners = self.pool[@"Winners"];
@@ -47,6 +50,12 @@
     [user fetch];
     [self.winnersArray addObject:user];
     self.count += 1;
+
+    // Send the user a message notifying them that they have won
+//    [Nexmo sendSMSToUserWithPhoneNumber:user[@"phone"] andMessage:@"You just won the pool" ithCompletionBlock:^(NSArray *messagesArray) {
+//        NSLog(@"%@", messagesArray);
+//    }];
+
     if (self.count == poolWinners.count) {
         [self stopWinnerTimer];
     }
@@ -62,7 +71,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"winners";
+    return @"Winners";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,7 +81,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WinnersCell"];
+    WinnerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WinnersCell"];
     PFUser *user = self.winnersArray[indexPath.row];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

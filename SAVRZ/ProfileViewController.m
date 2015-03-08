@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *uidTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 @end
 
@@ -30,6 +31,17 @@
 - (IBAction)onExitButtonTapped:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:^{
 
+    }];
+}
+
+- (IBAction)onSaveAccountDetails:(UIButton *)sender
+{
+    PFUser *user = [PFUser currentUser];
+    user[@"phone"] = self.phoneNumberTextField.text;
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Phone Number Saved");
+        }
     }];
 }
 

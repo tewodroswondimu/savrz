@@ -41,6 +41,8 @@
 		18B7D2F01AA918A800147BED /* CreatePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */; };
 		18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */; };
 		18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */; };
+		18E3D6D81AABE9DC00A0D4A9 /* WinnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3D6D71AABE9DC00A0D4A9 /* WinnerTableViewCell.m */; };
+		18E3D6DB1AABECAC00A0D4A9 /* Nexmo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3D6DA1AABECAC00A0D4A9 /* Nexmo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,10 @@
 		18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFriendsViewController.m; sourceTree = "<group>"; };
 		18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCollectionViewCell.h; sourceTree = "<group>"; };
 		18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCollectionViewCell.m; sourceTree = "<group>"; };
+		18E3D6D61AABE9DC00A0D4A9 /* WinnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinnerTableViewCell.h; sourceTree = "<group>"; };
+		18E3D6D71AABE9DC00A0D4A9 /* WinnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinnerTableViewCell.m; sourceTree = "<group>"; };
+		18E3D6D91AABECAB00A0D4A9 /* Nexmo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nexmo.h; sourceTree = "<group>"; };
+		18E3D6DA1AABECAC00A0D4A9 /* Nexmo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nexmo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +259,10 @@
 				18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */,
 				187264D71AAB925A0072FA00 /* LevelMoney.h */,
 				187264D81AAB925A0072FA00 /* LevelMoney.m */,
+				18E3D6D61AABE9DC00A0D4A9 /* WinnerTableViewCell.h */,
+				18E3D6D71AABE9DC00A0D4A9 /* WinnerTableViewCell.m */,
+				18E3D6D91AABECAB00A0D4A9 /* Nexmo.h */,
+				18E3D6DA1AABECAC00A0D4A9 /* Nexmo.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 			files = (
 				181BF2161AABC1DD0069B98B /* PoolDetailViewController.m in Sources */,
 				18B7D2F61AAA4E1B00147BED /* FriendsCollectionViewCell.m in Sources */,
+				18E3D6D81AABE9DC00A0D4A9 /* WinnerTableViewCell.m in Sources */,
 				1846B8631AA8C49900A23C3D /* SAVRZ.xcdatamodeld in Sources */,
 				1846B8601AA8C49900A23C3D /* AppDelegate.m in Sources */,
 				187264D91AAB925A0072FA00 /* LevelMoney.m in Sources */,
@@ -367,6 +378,7 @@
 				18B7D2F31AA91E9300147BED /* FBFriendsViewController.m in Sources */,
 				1846B8661AA8C49900A23C3D /* ViewController.m in Sources */,
 				1846B85D1AA8C49900A23C3D /* main.m in Sources */,
+				18E3D6DB1AABECAC00A0D4A9 /* Nexmo.m in Sources */,
 				18B7D2F01AA918A800147BED /* CreatePoolViewController.m in Sources */,
 				18B7D2ED1AA9039100147BED /* LoginViewController.m in Sources */,
 			);

@@ -9,6 +9,7 @@
 #import "CreatePoolViewController.h"
 #import "FBFriendsViewController.h"
 #import "FriendsCollectionViewCell.h"
+#import "Nexmo.h"
 
 @interface CreatePoolViewController() <UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -98,6 +99,9 @@
     PFRelation *relation = [poolObject relationForKey:@"Owners"];
     for (PFUser *owner in self.selectedUsersArray) {
         [relation addObject:owner];
+        [Nexmo sendSMSToUserWithPhoneNumber:owner[@"phone"] andMessage:@"Someone added you to a pool" ithCompletionBlock:^(NSArray *messagesArray) {
+            NSLog(@"%@", messagesArray);
+        }];
     }
 
     poolObject[@"Winners"] = [self randomizeMutableArray:self.selectedUsersArray];

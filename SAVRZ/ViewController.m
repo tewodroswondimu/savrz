@@ -99,7 +99,10 @@
 
     // Find all the pools that are owned by the users
     PFQuery *query = [PFQuery queryWithClassName:@"Pools"];
-    [query whereKey:@"Owners" equalTo:[PFUser currentUser]];
+    PFUser *user = [PFUser currentUser];
+    if (user) {
+        [query whereKey:@"Owners" equalTo:[PFUser currentUser]];
+    }
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          self.poolsArray = objects;
