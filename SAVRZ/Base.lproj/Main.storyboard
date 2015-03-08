@@ -206,6 +206,12 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZR-Le-ZbK">
+                                        <rect key="frame" x="230" y="174" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -248,6 +254,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cWD-aP-oZ8"/>
                     <connections>
+                        <outlet property="TotalAmount" destination="uZR-Le-ZbK" id="vma-2t-uM8"/>
                         <outlet property="createdByImageView" destination="0rO-eK-iV7" id="epD-Gk-nu1"/>
                         <outlet property="createdByName" destination="4Zl-Qa-oh8" id="tUM-ka-nOS"/>
                         <outlet property="poolAccountNumberLabel" destination="V3Z-5x-THS" id="XXu-Ze-ojI"/>

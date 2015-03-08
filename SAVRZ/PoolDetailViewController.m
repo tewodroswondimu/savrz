@@ -17,11 +17,11 @@
 @property NSTimer *winnerTimer;
 @property NSMutableArray *owners;
 @property int count;
-@property (weak, nonatomic) IBOutlet UICollectionView *friendsCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *poolAccountNumberLabel;
 @property NSMutableArray *friendsArray;
 @property (weak, nonatomic) IBOutlet UIImageView *createdByImageView;
 @property (weak, nonatomic) IBOutlet UILabel *createdByName;
+@property (weak, nonatomic) IBOutlet UILabel *TotalAmount;
 
 @end
 
@@ -38,7 +38,6 @@
     self.winnersArray = [NSMutableArray new];
     self.friendsArray = [NSMutableArray new];
     self.owners = [NSMutableArray new];
-    self.friendsCollectionView.backgroundColor = [UIColor clearColor];
     self.count = 0;
     self.winnerTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(winnerTimer:) userInfo:nil repeats:YES];
 
@@ -54,7 +53,6 @@
     self.createdByImageView.layer.cornerRadius = 10;
     self.createdByImageView.clipsToBounds = YES;
     self.createdByImageView.image = image;
-    [self.friendsCollectionView reloadData];
     PFRelation *relation = self.pool[@"Owners"];
     PFQuery *query = [relation query];
 
@@ -63,7 +61,11 @@
          for (PFUser *user in objects) {
              [self.owners addObject:user];
          }
-         [self.friendsCollectionView reloadData];
+
+         NSNumber *amount = self.pool[@"Amount"];
+         float total = [amount intValue] * objects.count;
+         amount = [NSNumber numberWithFloat:total];
+         self.TotalAmount.text = [NSString stringWithFormat:@"$%@", amount];
      }];
 }
 
@@ -92,7 +94,6 @@
         [self stopWinnerTimer];
     }
     [self.tableView reloadData];
-    [self.friendsCollectionView reloadData];
 }
 
 //#pragma mark -
