@@ -175,8 +175,6 @@
 				18B7D2EF1AA918A800147BED /* CreatePoolViewController.m */,
 				18B7D2F11AA91E9300147BED /* FBFriendsViewController.h */,
 				18B7D2F21AA91E9300147BED /* FBFriendsViewController.m */,
-				18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */,
-				18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */,
 				187264DA1AAB976E0072FA00 /* ProfileViewController.h */,
 				187264DB1AAB976E0072FA00 /* ProfileViewController.m */,
 				1846B8671AA8C49900A23C3D /* Main.storyboard */,
@@ -251,6 +249,8 @@
 		187264DD1AAB977B0072FA00 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				18B7D2F41AAA4E1B00147BED /* FriendsCollectionViewCell.h */,
+				18B7D2F51AAA4E1B00147BED /* FriendsCollectionViewCell.m */,
 				187264D71AAB925A0072FA00 /* LevelMoney.h */,
 				187264D81AAB925A0072FA00 /* LevelMoney.m */,
 			);

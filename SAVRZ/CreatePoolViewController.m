@@ -91,19 +91,32 @@
     poolObject[@"Amount"] = [NSNumber numberWithFloat:[self.amountOfMoneyTextField.text floatValue]];
     poolObject[@"Period"] = self.periodTextField.text;
 
+    // Add the creator as an owner
+    [self.selectedUsersArray addObject:[PFUser currentUser]];
+
     // Saves all the owners of the pool
     PFRelation *relation = [poolObject relationForKey:@"Owners"];
     for (PFUser *owner in self.selectedUsersArray) {
         [relation addObject:owner];
     }
-    // Add the creator as an owner
-    [relation addObject:[PFUser currentUser]];
 
-    [self.navigationController popViewControllerAnimated:YES];
+    poolObject[@"Winners"] = [self randomizeMutableArray:self.selectedUsersArray];
     [poolObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
+}
+
+- (NSArray *)randomizeMutableArray:(NSMutableArray *)mutableArray
+{
+    NSUInteger count = mutableArray.count;
+    for (NSUInteger i = 0; i < count; ++i) {
+        NSInteger remainingCount = count - i;
+        NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
+        [mutableArray exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+    }
+    return [NSArray arrayWithArray:mutableArray];
 }
 
 #pragma mark -
