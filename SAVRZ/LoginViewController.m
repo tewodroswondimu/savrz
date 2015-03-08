@@ -8,7 +8,18 @@
 
 #import "LoginViewController.h"
 
+@interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *facebookLoginButton;
+
+@end
+
 @implementation LoginViewController
+
+- (void)viewDidLoad
+{
+    self.facebookLoginButton.layer.cornerRadius = 10;
+    self.facebookLoginButton.clipsToBounds = YES;
+}
 
 - (IBAction)onLoginWithFacebookButtonPressed:(UIButton *)sender {
     NSArray *permissionsArray = @[@"user_about_me", @"user_friends"];

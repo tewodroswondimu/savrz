@@ -370,20 +370,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-6t-xMT">
-                                <rect key="frame" x="68" y="269" width="185" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-6t-xMT">
+                                <rect key="frame" x="68" y="468" width="185" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YuK-c4-vyH"/>
+                                    <constraint firstAttribute="width" constant="185" id="kV2-CW-Rfm"/>
+                                </constraints>
                                 <state key="normal" title="Login With Facebook">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.52156862749999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onLoginWithFacebookButtonPressed:" destination="qTA-Ef-OCH" eventType="touchUpInside" id="vGV-y2-IQ2"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoSocial" translatesAutoresizingMaskIntoConstraints="NO" id="ORk-fi-5WU">
+                                <rect key="frame" x="3" y="127" width="315" height="315"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="315" id="sQz-ck-rgk"/>
+                                    <constraint firstAttribute="width" constant="315" id="uBH-Yp-xqC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.36862745098039218" green="0.77254901960784317" blue="0.67843137254901964" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="beC-gz-whP" firstAttribute="top" secondItem="VFC-6t-xMT" secondAttribute="bottom" constant="70" id="Cns-n1-i4a"/>
+                            <constraint firstAttribute="centerY" secondItem="ORk-fi-5WU" secondAttribute="centerY" id="JjD-kg-lVI"/>
+                            <constraint firstAttribute="centerX" secondItem="ORk-fi-5WU" secondAttribute="centerX" id="Mhd-g7-2rR"/>
+                            <constraint firstAttribute="centerX" secondItem="VFC-6t-xMT" secondAttribute="centerX" id="Xg7-ec-Mkn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="VFC-6t-xMT" id="pGU-R2-ekB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxa-Wx-ANs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,7 +419,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.36862745099999999" green="0.7725490196" blue="0.52156862749999999" alpha="1" colorSpace="deviceRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.36862745099999999" green="0.7725490196" blue="0.52156862749999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -415,6 +435,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LogoSocial" width="1024" height="1024"/>
         <image name="ProfileIcon" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
