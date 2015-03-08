@@ -17,8 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E20-BN-Fyl">
-                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <rect key="frame" x="274" y="20" width="30" height="30"/>
                                 <state key="normal" title="Exit">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -37,7 +38,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ve-eT-5HL">
                                 <rect key="frame" x="83" y="459" width="155" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Connect With Account">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -50,17 +53,26 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqD-hd-vxG">
-                                <rect key="frame" x="87" y="142" width="147" height="30"/>
+                                <rect key="frame" x="83" y="175" width="147" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save Account Details">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onSaveAccountDetails:" destination="dg8-al-pCL" eventType="touchUpInside" id="8Fh-ec-oOZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwi-az-HLd">
+                                <rect key="frame" x="47" y="133" width="226" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu0-pV-tMg">
-                                <rect key="frame" x="248" y="20" width="56" height="30"/>
+                                <rect key="frame" x="16" y="20" width="56" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -71,6 +83,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="jwi-az-HLd" id="hOO-cv-JPf"/>
                         <outlet property="phoneNumberTextField" destination="dam-4O-1JJ" id="CBj-QY-wQB"/>
                         <outlet property="tokenTextField" destination="UAf-pD-PoF" id="jsk-Km-rxB"/>
                         <outlet property="uidTextField" destination="tnc-hj-CE9" id="fdE-z0-0uJ"/>
@@ -95,22 +108,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l60-3Y-Q4i">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Qsz-jT-sxL">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auj-te-4Ny">
-                                            <rect key="frame" x="188" y="8" width="124" height="30"/>
-                                            <state key="normal" title="Create New Pools">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="JW5-ok-LXl" kind="push" id="fnQ-PN-oUt"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PoolsCell" textLabel="ody-s7-3Ie" detailTextLabel="fqP-TN-hYP" style="IBUITableViewCellStyleSubtitle" id="Egf-2o-3tC">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -121,13 +118,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ody-s7-3Ie">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fqP-TN-hYP">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -157,6 +154,11 @@
                                 <segue destination="dg8-al-pCL" kind="modal" id="B3P-1y-ITz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gtO-03-tMu">
+                            <connections>
+                                <segue destination="JW5-ok-LXl" kind="push" id="VfZ-zo-JD1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="l60-3Y-Q4i" id="Oe2-UP-uz4"/>
@@ -179,8 +181,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-zQ-gaF">
-                                <rect key="frame" x="0.0" y="236" width="320" height="332"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-JV-aUb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DebitCard" translatesAutoresizingMaskIntoConstraints="NO" id="5dO-Fi-w1z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="230" id="Vbp-4L-wqB"/>
+                                            <constraint firstAttribute="width" constant="320" id="xJe-4m-WYt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234 5678 9010" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3Z-5x-THS">
+                                        <rect key="frame" x="23" y="125" width="273" height="21"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rO-eK-iV7">
+                                        <rect key="frame" x="35" y="165" width="30" height="30"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zl-Qa-oh8">
+                                        <rect key="frame" x="73" y="174" width="139" height="21"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="5dO-Fi-w1z" secondAttribute="centerY" id="9FH-mi-od1"/>
+                                    <constraint firstAttribute="centerX" secondItem="5dO-Fi-w1z" secondAttribute="centerX" id="Y0L-mH-DTT"/>
+                                    <constraint firstAttribute="height" constant="230" id="sAJ-Db-FSk"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-zQ-gaF">
+                                <rect key="frame" x="0.0" y="230" width="320" height="274"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WinnersCell" id="MRY-0G-fd7">
@@ -201,9 +236,21 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="H9z-JV-aUb" secondAttribute="trailing" id="A5l-iT-kx6"/>
+                            <constraint firstAttribute="trailing" secondItem="h4y-zQ-gaF" secondAttribute="trailing" id="K9C-Rh-vtm"/>
+                            <constraint firstItem="h4y-zQ-gaF" firstAttribute="leading" secondItem="yKV-Lh-itS" secondAttribute="leading" id="LUX-uv-zZm"/>
+                            <constraint firstItem="H9z-JV-aUb" firstAttribute="top" secondItem="zUj-aM-7ax" secondAttribute="bottom" id="YNi-ae-ZCw"/>
+                            <constraint firstItem="H9z-JV-aUb" firstAttribute="leading" secondItem="yKV-Lh-itS" secondAttribute="leading" id="fWe-V3-2bQ"/>
+                            <constraint firstItem="h4y-zQ-gaF" firstAttribute="top" secondItem="H9z-JV-aUb" secondAttribute="bottom" id="tfe-6C-OFX"/>
+                            <constraint firstItem="DQl-hU-d9Z" firstAttribute="top" secondItem="h4y-zQ-gaF" secondAttribute="bottom" id="zB9-xR-Amt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cWD-aP-oZ8"/>
                     <connections>
+                        <outlet property="createdByImageView" destination="0rO-eK-iV7" id="epD-Gk-nu1"/>
+                        <outlet property="createdByName" destination="4Zl-Qa-oh8" id="tUM-ka-nOS"/>
+                        <outlet property="poolAccountNumberLabel" destination="V3Z-5x-THS" id="XXu-Ze-ojI"/>
                         <outlet property="tableView" destination="h4y-zQ-gaF" id="Y5S-Gi-R00"/>
                     </connections>
                 </viewController>
@@ -243,8 +290,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFj-l7-R3g">
-                                <rect key="frame" x="16" y="261" width="118" height="30"/>
+                                <rect key="frame" x="16" y="195" width="118" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="19"/>
                                 <state key="normal" title="Add Your Friends">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -252,22 +301,40 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Pool" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-Fz-sK4">
-                                <rect key="frame" x="16" y="86" width="214" height="30"/>
+                                <rect key="frame" x="90" y="20" width="214" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount of Money" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-aS-3ZZ">
-                                <rect key="frame" x="16" y="130" width="214" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$100" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-aS-3ZZ">
+                                <rect key="frame" x="90" y="58" width="214" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Period" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-jl-ThO">
-                                <rect key="frame" x="16" y="177" width="214" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Monthly" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-jl-ThO">
+                                <rect key="frame" x="90" y="96" width="214" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pool Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agk-uY-UBI">
+                                <rect key="frame" x="24" y="27" width="65" height="21"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                <color key="textColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZm-UD-Vb5">
+                                <rect key="frame" x="24" y="62" width="65" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                <color key="textColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5T-NJ-kHG">
+                                <rect key="frame" x="24" y="103" width="65" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                <color key="textColor" red="0.36862745099999999" green="0.7725490196" blue="0.67843137249999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SzG-Jy-hzI">
-                                <rect key="frame" x="16" y="226" width="288" height="110"/>
+                                <rect key="frame" x="16" y="160" width="288" height="110"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7rg-yV-X1e">
                                     <size key="itemSize" width="50" height="50"/>
@@ -313,6 +380,7 @@
                         <outlet property="addYourFriendsButton" destination="tFj-l7-R3g" id="DfW-Yp-Wwo"/>
                         <outlet property="amountOfMoneyTextField" destination="sV5-aS-3ZZ" id="fXZ-TA-nMe"/>
                         <outlet property="collectionView" destination="SzG-Jy-hzI" id="Piy-sa-mDl"/>
+                        <outlet property="createButton" destination="Ryd-k5-OSv" id="Uds-ca-10Y"/>
                         <outlet property="periodTextField" destination="z4W-jl-ThO" id="teg-LD-kEb"/>
                         <outlet property="poolNameTextField" destination="pcA-Fz-sK4" id="q6t-Ns-DcM"/>
                     </connections>
@@ -321,7 +389,7 @@
             </objects>
             <point key="canvasLocation" x="1265" y="-188"/>
         </scene>
-        <!--Friends View Controller-->
+        <!--Facebook Friends-->
         <scene sceneID="pZf-kW-2DG">
             <objects>
                 <tableViewController id="08t-y6-6Iw" customClass="FBFriendsViewController" sceneMemberID="viewController">
@@ -342,7 +410,7 @@
                             <outlet property="delegate" destination="08t-y6-6Iw" id="qoq-3O-16y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pAW-mv-VAd">
+                    <navigationItem key="navigationItem" title="Facebook Friends" id="pAW-mv-VAd">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Bc4-Wi-ihi">
                             <connections>
                                 <segue destination="Bna-Wd-mK1" kind="unwind" unwindAction="unwindFromAddFriends:" id="9Qw-MQ-VvI"/>
@@ -435,6 +503,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DebitCard" width="1181" height="827"/>
         <image name="LogoSocial" width="1024" height="1024"/>
         <image name="ProfileIcon" width="35" height="35"/>
     </resources>

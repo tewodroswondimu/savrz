@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *periodTextField;
 @property (weak, nonatomic) IBOutlet UIButton *addYourFriendsButton;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createButton;
 
 @property UIPickerView *pickerView;
 @property NSArray *duration;
@@ -38,6 +39,7 @@
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     self.periodTextField.inputView = self.pickerView;
+    self.createButton.enabled = NO;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -78,6 +80,7 @@
             }
         }];
     }
+    self.createButton.enabled = YES;
 
     self.collectionView.hidden = NO;
     [self.collectionView reloadData];
@@ -90,6 +93,7 @@
     poolObject[@"PoolName"] = self.poolNameTextField.text;
     poolObject[@"CreatedBy"] = [PFUser currentUser];
     poolObject[@"Amount"] = [NSNumber numberWithFloat:[self.amountOfMoneyTextField.text floatValue]];
+    poolObject[@"poolAccountNumber"] = @"4523 3212 8375 3282";
     poolObject[@"Period"] = self.periodTextField.text;
 
     // Add the creator as an owner
@@ -99,7 +103,9 @@
     PFRelation *relation = [poolObject relationForKey:@"Owners"];
     for (PFUser *owner in self.selectedUsersArray) {
         [relation addObject:owner];
-        [Nexmo sendSMSToUserWithPhoneNumber:owner[@"phone"] andMessage:@"Someone added you to a pool" ithCompletionBlock:^(NSArray *messagesArray) {
+        PFUser *user = [PFUser currentUser];
+        NSString *message = [NSString stringWithFormat:@"%@ added you to a %.2f SAVRZ pool named %@", user[@"profile"][@"name"], [self.amountOfMoneyTextField.text doubleValue],  self.poolNameTextField.text];
+        [Nexmo sendSMSToUserWithPhoneNumber:owner[@"phone"] andMessage:message ithCompletionBlock:^(NSArray *messagesArray) {
             NSLog(@"%@", messagesArray);
         }];
     }

@@ -234,7 +234,6 @@
                                    }
                                }];
     }
-    NSLog(@"%@ is a %@ born on %@ with a relationship status of %@", self.username, self.gender, self.birthday, self.relationshipStatus);
 }
 
 

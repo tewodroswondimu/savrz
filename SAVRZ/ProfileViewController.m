@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *uidTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 @end
 
@@ -46,6 +47,7 @@
 {
     PFUser *user = [PFUser currentUser];
     user[@"phone"] = self.phoneNumberTextField.text;
+    user[@"email"] = self.emailTextField.text;
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Phone Number Saved");

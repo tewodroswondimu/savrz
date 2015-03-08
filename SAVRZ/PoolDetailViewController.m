@@ -8,13 +8,20 @@
 
 #import "PoolDetailViewController.h"
 #import "WinnerViewController.h"
+#import "FriendsCollectionViewCell.h"
 #import "Nexmo.h"
 
 @interface PoolDetailViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *winnersArray;
 @property NSTimer *winnerTimer;
+@property NSMutableArray *owners;
 @property int count;
+@property (weak, nonatomic) IBOutlet UICollectionView *friendsCollectionView;
+@property (weak, nonatomic) IBOutlet UILabel *poolAccountNumberLabel;
+@property NSMutableArray *friendsArray;
+@property (weak, nonatomic) IBOutlet UIImageView *createdByImageView;
+@property (weak, nonatomic) IBOutlet UILabel *createdByName;
 
 @end
 
@@ -29,10 +36,35 @@
 {
     [super viewDidLoad];
     self.winnersArray = [NSMutableArray new];
+    self.friendsArray = [NSMutableArray new];
+    self.owners = [NSMutableArray new];
+    self.friendsCollectionView.backgroundColor = [UIColor clearColor];
     self.count = 0;
-    self.winnerTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(winnerTimer:) userInfo:nil repeats:YES];
+    self.winnerTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(winnerTimer:) userInfo:nil repeats:YES];
 
     self.title = self.pool[@"PoolName"];
+    self.poolAccountNumberLabel.text  = self.pool[@"poolAccountNumber"];
+    PFUser *poolCreator = self.pool[@"CreatedBy"];
+    [poolCreator fetchIfNeeded];
+    self.createdByName.text = poolCreator[@"profile"][@"name"];
+    NSString *imageURLString = poolCreator[@"profile"][@"pictureURL"];
+    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+    self.createdByImageView.layer.cornerRadius = 10;
+    self.createdByImageView.clipsToBounds = YES;
+    self.createdByImageView.image = image;
+    [self.friendsCollectionView reloadData];
+    PFRelation *relation = self.pool[@"Owners"];
+    PFQuery *query = [relation query];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         for (PFUser *user in objects) {
+             [self.owners addObject:user];
+         }
+         [self.friendsCollectionView reloadData];
+     }];
 }
 
 - (void)stopWinnerTimer
@@ -60,8 +92,38 @@
         [self stopWinnerTimer];
     }
     [self.tableView reloadData];
+    [self.friendsCollectionView reloadData];
 }
 
+//#pragma mark -
+//#pragma mark COLLECTION VIEW
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    FriendsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FriendsCell" forIndexPath:indexPath];
+//    PFUser *user = self.pool[@"CreatedBy"];
+//    [user fetch];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        if (user) {
+//            NSString *imageURLString = user[@"profile"][@"pictureURL"];
+//            NSURL *imageURL = [NSURL URLWithString:imageURLString];
+//            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//            UIImage *image = [UIImage imageWithData:imageData];
+//            cell.imageView.layer.cornerRadius = 20;
+//            cell.imageView.clipsToBounds = YES;
+//            cell.imageView.image = image;
+//            [self.friendsCollectionView reloadData];
+//        }
+//    });
+//    return cell;
+//}
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+//{
+//    return self.owners.count;
+//}
+
+#pragma mark -
 #pragma mark TABLE VIEW
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
