@@ -179,20 +179,15 @@
                                 <rect key="frame" x="0.0" y="236" width="320" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WinnersCell" textLabel="yo7-vI-NA5" style="IBUITableViewCellStyleDefault" id="MRY-0G-fd7" customClass="WinnerTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WinnersCell" id="MRY-0G-fd7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MRY-0G-fd7" id="eXm-VF-QYq">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yo7-vI-NA5">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IZd-nM-qL5" kind="push" id="ig1-3t-9vd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -211,6 +206,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyj-MJ-4hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1265" y="496"/>
+        </scene>
+        <!--Winner View Controller-->
+        <scene sceneID="OP8-Rp-fVV">
+            <objects>
+                <viewController id="IZd-nM-qL5" customClass="WinnerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gzW-w2-Txk"/>
+                        <viewControllerLayoutGuide type="bottom" id="kMf-dr-pXE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H7K-85-7E7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7ze-YP-YqM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5c-8u-CSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="496"/>
         </scene>
         <!--Create Pool View Controller-->
         <scene sceneID="Sve-Y4-ILy">

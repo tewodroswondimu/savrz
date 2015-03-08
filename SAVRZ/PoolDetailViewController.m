@@ -7,7 +7,7 @@
 //
 
 #import "PoolDetailViewController.h"
-#import "WinnerTableViewCell.h"
+#import "WinnerViewController.h"
 #import "Nexmo.h"
 
 @interface PoolDetailViewController() <UITableViewDataSource, UITableViewDelegate>
@@ -79,19 +79,38 @@
     return self.winnersArray.count;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    WinnerViewController *wvc = segue.destinationViewController;
+    wvc.user = self.winnersArray[self.tableView.indexPathForSelectedRow.row];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WinnerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WinnersCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WinnersCell"];
     PFUser *user = self.winnersArray[indexPath.row];
 
+//    if (indexPath.length == self.winnersArray.count) {
+//        // Buy button
+//        UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+//        [buyButton setFrame:CGRectMake(0, 0, 50, 35)];
+//        cell.accessoryView = buyButton;
+//    } else
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        cell.textLabel.text = user[@"profile"][@"name"];
-        NSString *imageURLString = user[@"profile"][@"pictureURL"];
-        NSURL *imageURL = [NSURL URLWithString:imageURLString];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        cell.imageView.layer.cornerRadius = 20;
-        cell.imageView.clipsToBounds = YES;
-        cell.imageView.image = [UIImage imageWithData:imageData];
+        if (user) {
+            cell.textLabel.text = user[@"profile"][@"name"];
+            NSString *imageURLString = user[@"profile"][@"pictureURL"];
+            NSURL *imageURL = [NSURL URLWithString:imageURLString];
+            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+            cell.imageView.layer.cornerRadius = 20;
+            cell.imageView.clipsToBounds = YES;
+            cell.imageView.image = [UIImage imageWithData:imageData];
+        }
     });
     return cell;
 }

@@ -180,6 +180,10 @@
             }
         }];
     }
+    else {
+        [PFUser logOut];
+    }
+
 }
 
 // Set received values if they are not nil and reload the table
