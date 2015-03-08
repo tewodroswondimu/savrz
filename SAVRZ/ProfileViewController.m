@@ -34,6 +34,14 @@
     }];
 }
 
+- (IBAction)logout:(UIButton *)sender {
+    [PFUser logOut];
+
+    [self dismissViewControllerAnimated:YES completion:^{
+
+    }];
+}
+
 - (IBAction)onSaveAccountDetails:(UIButton *)sender
 {
     PFUser *user = [PFUser currentUser];

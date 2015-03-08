@@ -61,6 +61,16 @@
     return cell;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Pools you own";
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"PoolDetailSegue"]) {
@@ -76,12 +86,6 @@
     {
         [self performSegueWithIdentifier:@"LoginSegue" sender:self];
     }
-}
-
-- (IBAction)logout:(UIBarButtonItem *)sender {
-    [PFUser logOut];
-    
-    [self checkLoggedIn];
 }
 
 - (void)loadPools
